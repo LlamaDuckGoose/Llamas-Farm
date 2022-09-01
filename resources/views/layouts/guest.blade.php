@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="h-full antialiased bg-zinc-50 dark:bg-zinc-800 transition-colors duration-300">
         {{ $slot }}
