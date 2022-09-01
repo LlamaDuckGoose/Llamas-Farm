@@ -38,6 +38,16 @@
                     />
                 </div>
                 <div>
+                    <label for="token" class="sr-only">Token</label>
+                    <x-input id="token"
+                             name="token"
+                             type="text"
+                             value="{{ old('token') }}"
+                             required
+                             placeholder="Token"
+                    />
+                </div>
+                <div>
                     <label for="password" class="sr-only">Password</label>
                     <x-input id="password"
                              name="password"

@@ -101,11 +101,31 @@
                             </a>
                         </nav>
                     </div>
-                    <x-form mt="0" method="POST" action="{{ route('logout') }}">
-                        <x-button class="rounded-none">
-                            Log Out
-                        </x-button>
-                    </x-form>
+
+                    @guest
+                        <x-form mt="0" method="POST" action="{{ route('login') }}">
+                            <x-button :focus="false" class="rounded-none">
+                                Log In
+                            </x-button>
+                        </x-form>
+                        <x-form mt="0" spacey="0" method="POST" action="{{ route('register') }}">
+                            <x-button :focus="false" class="rounded-none ">
+                                Register
+                            </x-button>
+                        </x-form>
+                    @endguest
+                    @auth
+                        <x-form mt="0" method="POST" action="{{ route('admin') }}">
+                            <x-button :focus="false" class="rounded-none">
+                                Admin Area
+                            </x-button>
+                        </x-form>
+                        <x-form mt="0" spacey="0" method="POST" action="{{ route('logout') }}">
+                            <x-button :focus="false" class="rounded-none">
+                                Log Out
+                            </x-button>
+                        </x-form>
+                    @endauth
                 </div>
 
                 <div class="flex-shrink-0 w-14">
@@ -148,11 +168,31 @@
                             </a>
                         </nav>
                     </div>
-                    <x-form mt="0" method="POST" action="{{ route('logout') }}">
-                        <x-button class="rounded-none">
-                            Log Out
-                        </x-button>
-                    </x-form>
+
+                    @guest
+                        <x-form mt="0" method="GET" action="{{ route('login') }}">
+                            <x-button :focus="false" class="rounded-none">
+                                Log In
+                            </x-button>
+                        </x-form>
+                        <x-form mt="0" spacey="0" method="GET" action="{{ route('register') }}">
+                            <x-button :focus="false" class="rounded-none ">
+                                Register
+                            </x-button>
+                        </x-form>
+                    @endguest
+                    @auth
+                        <x-form mt="0" method="POST" action="{{ route('admin') }}">
+                            <x-button :focus="false" class="rounded-none">
+                                Admin Area
+                            </x-button>
+                        </x-form>
+                        <x-form mt="0" spacey="0" method="POST" action="{{ route('logout') }}">
+                            <x-button :focus="false" class="rounded-none">
+                                Log Out
+                            </x-button>
+                        </x-form>
+                    @endauth
                 </div>
             </div>
             <div class="md:pl-64 flex flex-col flex-1 h-screen">
